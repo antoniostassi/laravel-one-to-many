@@ -21,8 +21,7 @@ class Project extends Model
         'type'
     ];
 
-    public function type(): HasOne // Il type è sempre 1, dunque hasOne e va specificato al singolare
-    {
-        return $this->hasOne(Type::class); // One to One
+    public function type(){ // Il type è sempre solo 1
+        return $this->belongsTo(Type::class); // One to One
     }
 }
