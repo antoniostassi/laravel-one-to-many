@@ -7,6 +7,16 @@ use App\Http\Controllers\MainController;
 use App\Http\Controllers\Admin\MainController as AdminMainController;
 
 use App\Http\Controllers\Admin\ProjectController as AdminProjectController;
+
+
+
+
+
+
+
+
+
+use App\Http\Controllers\Admin\TypeController as AdminTypeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,7 +37,8 @@ Route::prefix('admin')
 
     Route::get('/dashboard', [AdminMainController::class, 'dashboard'])->name('dashboard');
 
-    Route::resource('projects', AdminProjectController::class);
+    Route::resource('projects', AdminProjectController::class); // Create CRUD routes for projects
+    Route::resource('types', AdminTypeController::class); // Create CRUD routes for types
 });
 
 require __DIR__.'/auth.php';

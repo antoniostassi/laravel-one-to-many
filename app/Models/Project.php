@@ -19,4 +19,9 @@ class Project extends Model
         'price',
         'completed'
     ];
+
+    public function types(): HasMany
+    {
+        return $this->hasOne(Type::class); // One to One
+    }
 }
