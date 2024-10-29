@@ -15,6 +15,7 @@
         <th scope="col">Tag</th>
         <th scope="col">Price</th>
         <th scope="col">Completed</th>
+        <th scope="col">Category</th>
         <th scope="col"></th>
         <th scope="col"></th>
         <th scope="col"></th>
@@ -31,6 +32,13 @@
             <td>{{$project->label_tag}}</td>
             <td>{{$project->price}}</td>
             <td>{{$project->completed}}</td>
+
+            @if (isset($project->type))
+              <td>{{$project->type->name}}</td>
+            @else
+              <td>-</td>
+            @endif
+            
             <td><a class="btn btn-primary" href="{{route('admin.projects.show', $project->id)}}">Visualizza</a></td>
             <td><a class="btn btn-warning" href="{{route('admin.projects.edit', $project->id)}}">Modifica</a></td>
             <td>
