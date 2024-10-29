@@ -17,7 +17,8 @@ class Project extends Model
         'expiring_date',
         'label_tag',
         'price',
-        'completed'
+        'completed', 
+        'type'
     ];
 
     public function type(): HasOne // Il type è sempre 1, dunque hasOne e va specificato al singolare
