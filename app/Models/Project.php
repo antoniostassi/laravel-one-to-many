@@ -20,7 +20,7 @@ class Project extends Model
         'completed'
     ];
 
-    public function types(): HasMany
+    public function type(): HasOne // Il type è sempre 1, dunque hasOne e va specificato al singolare
     {
         return $this->hasOne(Type::class); // One to One
     }
